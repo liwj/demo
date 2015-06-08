@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.techlon.base</groupId><!-- 组名 -->
+  <artifactId>demo</artifactId><!-- 工程名 -->
+  <version>0.0.1-SNAPSHOT</version><!-- 版本号 -->
+  <packaging>war</packaging><!-- 包类型 -->
+  <name>demo webapp</name><!-- 项目描述 -->
+  <url></url><!-- 开发团队的网站 -->
+  <!-- 属性信息 -->	
+  <properties>
+  	<java-version>1.7</java-version>
+  	<junit-version>4.12</junit-version>
+  	<spring-release-version>4.1.6.RELEASE</spring-release-version>
+  	<mybatis-vsersion>3.3.0</mybatis-vsersion>
+  	<mybatis-spring-version>1.2.2</mybatis-spring-version>
+  	<c3p0-version>0.9.5</c3p0-version>
+  	<mysql-version>5.1.35</mysql-version>
+  	<freemarker-version>2.3.20</freemarker-version>
+  </properties>
+  <!-- 包引用 -->
+  <dependencies>
+  	<!-- junit test -->
+  	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${junit-version}</version>
+		<scope>test</scope>
+	</dependency>
+	<!-- spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring-release-version}</version>
+	</dependency>
+	<!-- mybatis -->
+	<dependency>
+	<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>${mybatis-vsersion}</version>
+	</dependency>
+		<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>${mybatis-spring-version}</version>
+	</dependency>
+	<!-- c3p0 -->
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>${c3p0-version}</version>
+	</dependency>
+	<!-- mysql driver -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>${freemarker-version}</version>
+	</dependency>
+	<!-- json -->
+	<dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<version>2.4</version>
+		<classifier>jdk15</classifier>
+	</dependency>
+  </dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warName>demo</warName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
