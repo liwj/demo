@@ -8,6 +8,14 @@ import java.util.Date;
 
 import org.springframework.util.StringUtils;
 
+/**
+ * <p>文件名称 : DateEditor.java</p>
+ * <p>文件描述 : 表单参数绑定 </p>
+ * <p>内容摘要 : 无</p>
+ * <p>其他说明 : 无</p>
+ * <p>完成日期 : 2015年6月8日 上午9:54:41</p>
+ * @author 李文军
+ */
 public class DateEditor extends PropertyEditorSupport {
 
     private static final DateFormat DATEFORMAT = new SimpleDateFormat("yyyy-MM-dd");

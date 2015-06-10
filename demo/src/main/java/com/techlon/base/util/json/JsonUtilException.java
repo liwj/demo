@@ -15,6 +15,9 @@ public class JsonUtilException extends Exception {
 	 */
 	private static final long serialVersionUID = -3301858174220183829L;
 
+	/**
+	 * @param message
+	 */
 	public JsonUtilException(String message) {
 		super(message);
 	}

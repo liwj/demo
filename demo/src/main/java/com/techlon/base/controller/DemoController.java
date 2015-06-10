@@ -18,10 +18,15 @@ import com.techlon.base.service.DemoService;
  * @author 李文军
  */
 @Controller
+@RequestMapping(value="demo/")
 public class DemoController extends BaseController{
 	
+	private final DemoService demoService;
+	
 	@Autowired
-	private DemoService demoService;
+	private DemoController(DemoService demoService) {
+		this.demoService = demoService;
+	}
 	
 	/**
 	 * <p>方法描述 : 反馈视图和对象 </p>
@@ -49,6 +54,23 @@ public class DemoController extends BaseController{
 	@ResponseBody
 	@RequestMapping(value="get_json",method=RequestMethod.GET,consumes = {"text/plain", "application/json"})
 	public void getJsonData(){
-		
+
+	}
+	
+	/**
+	 * <p>方法描述 : 无 </p>
+	 * <p>其他说明 : 无</p>
+	 * <p>完成日期 : 2015年6月8日 上午10:11:57</p>
+	 * @author 李文军
+	 * @param status
+	 * @return
+	 */
+	@RequestMapping(value="{status}")
+	public String get(String status) {
+		if ("1".equals(status)) {
+			return "demo/status";
+		} else {
+			return "redirect:/demo/other";
+		}
 	}
 }
