@@ -1,9 +1,9 @@
-package com.techlon.base.dao;
+package com.techlon.base.mappers;
 
 import java.util.List;
 
 import com.techlon.base.model.DemoModel;
 
-public interface DemoDao {
+public interface DemoMapper {
 	List<DemoModel> findAll();
 }

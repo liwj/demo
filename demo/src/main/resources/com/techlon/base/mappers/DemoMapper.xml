@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.techlon.base.dao.DemoDao" >
+<mapper namespace="com.techlon.base.mappers.DemoMapper" >
 	<select id="findAll" resultType="com.techlon.base.model.DemoModel" >
 		select id,demo_name demoName,demo_desc demoDesc, demo_dt demoDt from demo_model
 	</select>

@@ -23,12 +23,7 @@ import net.sf.json.util.PropertyFilter;
 import com.techlon.base.util.string.StringUtil;
 
 /**
- * <p>文件名称 : JsonUtil.java</p>
- * <p>文件描述 : 产生json文件的工具  </p>
- * <p>内容摘要 : 无</p>
- * <p>其他说明 : 无</p>
- * <p>完成日期 : 2015年6月5日 下午2:41:57</p>
- * @author 李文军
+ * 产生json文件的工具
  */
 public class JsonUtil {
 	public final static int FORM = 1;
@@ -43,7 +38,7 @@ public class JsonUtil {
 	 * 不允许实例化
 	 */
 	private JsonUtil() {
-	};
+	}
 
 	/**
 	 * 获得读取数据成功的信息

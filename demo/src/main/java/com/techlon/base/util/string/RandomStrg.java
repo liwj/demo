@@ -9,12 +9,7 @@ import java.util.Random;
 import java.util.StringTokenizer;
 
 /**
- * <p>文件名称 : RandomStrg.java</p>
- * <p>文件描述 : 创建随机的字符串 </p>
- * <p>内容摘要 : 无</p>
- * <p>其他说明 : 无</p>
- * <p>完成日期 : 2015年6月5日 下午2:27:00</p>
- * @author 李文军
+ * 创建随机的字符串
  */
 public class RandomStrg {
 

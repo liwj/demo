@@ -25,7 +25,7 @@
 	</beans:bean>
 	<!-- mapper对应DAO -->
 	<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<beans:property name="basePackage" value="com.techlon.base.dao" />
+		<beans:property name="basePackage" value="com.techlon.base.mappers" />
 	</beans:bean>
 
 	<!-- 事务配置 -->
@@ -65,5 +65,4 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
-
 </beans:beans>

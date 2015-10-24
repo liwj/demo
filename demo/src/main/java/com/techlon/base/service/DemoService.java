@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.techlon.base.dao.DemoDao;
+import com.techlon.base.mappers.DemoMapper;
 import com.techlon.base.model.DemoModel;
 
 /**
@@ -20,9 +20,9 @@ import com.techlon.base.model.DemoModel;
 @Service
 public class DemoService {
 	@Resource
-	DemoDao demoDao;
+	DemoMapper demoMapper;
 	public List<DemoModel> findAll() {
 		// TODO Auto-generated method stub
-		return demoDao.findAll();
+		return demoMapper.findAll();
 	}
 }

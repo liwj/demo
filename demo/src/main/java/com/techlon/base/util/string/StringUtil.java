@@ -25,12 +25,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
 /**
- * <p>文件名称 : StringUtil.java</p>
- * <p>文件描述 : 此类中封装一些常用的字符串操作（和业务无关） </p>
- * <p>内容摘要 : 无</p>
- * <p>其他说明 : 无</p>
- * <p>完成日期 : 2015年6月5日 下午2:26:09</p>
- * @author 李文军
+ * 此类中封装一些常用的字符串操作（和业务无关）
  */
 @SuppressWarnings("restriction")
 public class StringUtil {

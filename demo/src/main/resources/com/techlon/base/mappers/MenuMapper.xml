@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.techlon.base.mappers.MenuMapper" >
+  <resultMap id="BaseResultMap" type="com.techlon.base.model.Menu" >
+    <constructor >
+      <idArg column="menu_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="menu_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="menu_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="menu_type" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="menu_order" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="menu_parent" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="menu_level" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="btn_type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="btn_img_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    menu_id, menu_name, menu_url, menu_type, menu_order, menu_parent, menu_level, btn_type, 
+    btn_img_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.techlon.base.model.Menu" >
+    insert into t_menu (menu_id, menu_name, menu_url, 
+      menu_type, menu_order, menu_parent, 
+      menu_level, btn_type, btn_img_url
+      )
+    values (#{menuId,jdbcType=INTEGER}, #{menuName,jdbcType=VARCHAR}, #{menuUrl,jdbcType=VARCHAR}, 
+      #{menuType,jdbcType=INTEGER}, #{menuOrder,jdbcType=INTEGER}, #{menuParent,jdbcType=INTEGER}, 
+      #{menuLevel,jdbcType=INTEGER}, #{btnType,jdbcType=VARCHAR}, #{btnImgUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.techlon.base.model.Menu" >
+    insert into t_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="menuId != null" >
+        menu_id,
+      </if>
+      <if test="menuName != null" >
+        menu_name,
+      </if>
+      <if test="menuUrl != null" >
+        menu_url,
+      </if>
+      <if test="menuType != null" >
+        menu_type,
+      </if>
+      <if test="menuOrder != null" >
+        menu_order,
+      </if>
+      <if test="menuParent != null" >
+        menu_parent,
+      </if>
+      <if test="menuLevel != null" >
+        menu_level,
+      </if>
+      <if test="btnType != null" >
+        btn_type,
+      </if>
+      <if test="btnImgUrl != null" >
+        btn_img_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="menuId != null" >
+        #{menuId,jdbcType=INTEGER},
+      </if>
+      <if test="menuName != null" >
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null" >
+        #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuType != null" >
+        #{menuType,jdbcType=INTEGER},
+      </if>
+      <if test="menuOrder != null" >
+        #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="menuParent != null" >
+        #{menuParent,jdbcType=INTEGER},
+      </if>
+      <if test="menuLevel != null" >
+        #{menuLevel,jdbcType=INTEGER},
+      </if>
+      <if test="btnType != null" >
+        #{btnType,jdbcType=VARCHAR},
+      </if>
+      <if test="btnImgUrl != null" >
+        #{btnImgUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.techlon.base.model.Menu" >
+    update t_menu
+    <set >
+      <if test="menuName != null" >
+        menu_name = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null" >
+        menu_url = #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuType != null" >
+        menu_type = #{menuType,jdbcType=INTEGER},
+      </if>
+      <if test="menuOrder != null" >
+        menu_order = #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="menuParent != null" >
+        menu_parent = #{menuParent,jdbcType=INTEGER},
+      </if>
+      <if test="menuLevel != null" >
+        menu_level = #{menuLevel,jdbcType=INTEGER},
+      </if>
+      <if test="btnType != null" >
+        btn_type = #{btnType,jdbcType=VARCHAR},
+      </if>
+      <if test="btnImgUrl != null" >
+        btn_img_url = #{btnImgUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.techlon.base.model.Menu" >
+    update t_menu
+    set menu_name = #{menuName,jdbcType=VARCHAR},
+      menu_url = #{menuUrl,jdbcType=VARCHAR},
+      menu_type = #{menuType,jdbcType=INTEGER},
+      menu_order = #{menuOrder,jdbcType=INTEGER},
+      menu_parent = #{menuParent,jdbcType=INTEGER},
+      menu_level = #{menuLevel,jdbcType=INTEGER},
+      btn_type = #{btnType,jdbcType=VARCHAR},
+      btn_img_url = #{btnImgUrl,jdbcType=VARCHAR}
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <select id="findAll" resultMap="BaseResultMap">
+  	 select 
+    <include refid="Base_Column_List" />
+    from t_menu
+  </select>
+  <select id="findMenusByRole" resultType="com.techlon.base.model.Menu" parameterType="int">
+  	SELECT
+		a.menu_id menuId,
+		a.menu_name menuName,
+		a.menu_url menuUrl,
+		a.menu_type menuType,
+		a.menu_order menuOrder,
+		a.menu_parent menuParent,
+		a.menu_level menuLevel,
+		a.btn_type btnType,
+		a.btn_img_url btnImgUrl
+	FROM
+		t_menu a,
+		t_role_menu b
+	WHERE
+		a.menu_id = b.menu_id
+	AND b.role_id = #{roleId,jdbcType=INTEGER}
+	ORDER BY
+		a.menu_order ASC
+  </select>
+</mapper>
